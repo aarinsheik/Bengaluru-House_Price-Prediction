@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Price Prediction</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+    <div class="nav">
+        <img src="house-xxl.png" height="30px">
+        <h4>AarWeb</h4>
+    </div>
+
+    <hr style="color: aliceblue;">
+
+    <img class="home_bg" src="house_bg.webp" height="300px">
+    
+    <h1 class="heading">ML-Driven House Price Prediction<br> <span class="mini">in Bengaluru</span></h1>
+    <p class="content1">This app uses machine learning to predict the price of the house. It loads a pre-trained linear regression model,
+         which takes as input various features of the house, such as area-size, the number of bathrooms, the number of bedrooms and location in city. 
+         The app preprocesses the input data and provides the predicted price.</p>
+    
+    <form class="form">
+        
+        <div class="areadiv">    
+            <h2>Area (square feet)</h2>
+            <input class="areatag" type="number" id="uiSqft" name="Squareft" value="1000">
+        </div>
+
+        <div class="bhkdiv">
+            <h2>BHK</h2>
+
+            <div class="switch-field">
+                <input type="radio" id="radio-bhk-1" name="uiBHK" value="1" checked/>
+                <label class="label label-1" for="radio-bhk-1">1</label>
+    
+                <input type="radio" id="radio-bhk-2" name="uiBHK" value="2"/>
+                <label class="label label-2" for="radio-bhk-2">2</label>
+    
+                <input type="radio" id="radio-bhk-3" name="uiBHK" value="3"/>
+                <label class="label label-3" for="radio-bhk-3">3</label>
+    
+                <input type="radio" id="radio-bhk-4" name="uiBHK" value="4"/>
+                <label class="label label-4" for="radio-bhk-4">4</label>
+    
+                <input type="radio" id="radio-bhk-5" name="uiBHK" value="5"/>
+                <label class="label label-5" for="radio-bhk-5">5</label>
+            </div>
+        </div>
+        
+        <div class="bathdiv">
+            <h2>Bath</h2>
+            <div class="switch-field">
+                <input type="radio" id="radio-bath-1" name="uiBathrooms" value="1" checked>
+                <label class="label label-bath-1" for="radio-bath-1">1</label>
+
+                <input type="radio" id="radio-bath-2" name="uiBathrooms" value="2">
+                <label class="label label-bath-2" for="radio-bath-2">2</label>
+
+                <input type="radio" id="radio-bath-3" name="uiBathrooms" value="3">
+                <label class="label label-bath-3" for="radio-bath-3">3</label>
+
+                <input type="radio" id="radio-bath-4" name="uiBathrooms" value="4">
+                <label class="label label-bath-4" for="radio-bath-4">4</label>
+
+                <input type="radio" id="radio-bath-5" name="uiBathrooms" value="5">
+                <label class="label label-bath-5" for="radio-bath-5">5</label>
+            </div>
+        </div>
+
+        <div class="locationdiv">
+            <h2>Location</h2>
+        <div>
+            <select name="" id="uiLocations" name="" class="selc_location">
+                <option value="" disable="disable" selected="selected">Choose a Location</option>
+                <option>Electronic City</option>
+                <option>Hebbal</option>
+                <option>Hormavu</option>
+                <option>JP Nagar</option>
+            </select>
+
+            <div id="errormsg"
+                style="
+                    position: absolute;
+                    margin-top:6px; 
+                    color: rgb(236, 96, 96);
+                    display: none;"> Please ,Choose a Location</div>
+
+        </div>
+
+        </div>
+        
+        <button class="submit_btn" onclick="Submit_userDetail()" type="button">Estimate Price</button>
+
+    </form>
+
+    <div class="popup" id="popupID">
+        <div class="popupcont">
+            <div class="resultdiv">
+                <p class="txt1"> The estimated Price is :</p>
+                <p class="txt2" id="price">85.3 Lakh</p>
+                <Button class="okbtn" onclick="close_popup()">OK</Button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

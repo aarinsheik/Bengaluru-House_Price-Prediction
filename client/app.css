@@ -1,0 +1,263 @@
+:root{
+    --background_blue : #080D12;
+    --light_blue : #6ec6f9;
+    --text_green : #75EF77;
+    --text-grey : #c1ccd3;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Carme&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+    background-color: #080D12;
+    font-family: "Carme", sans-serif;
+    color: aliceblue;
+}
+
+body{
+    width: 100vw;   
+    overflow: hidden;
+    height: auto;
+}
+
+.nav{
+    display: flex;
+    height: 30px ;
+    align-items: center;
+    
+}
+
+.nav > img {
+    margin : 20px;
+}
+
+.nav > h4{
+    align-self: center;
+    font-size: 1.2rem  ;
+    justify-self: center; 
+}
+
+.home_bg{
+    position: absolute;
+    right: 6rem ;
+    top: 13rem;
+    height: 350px;
+    border-radius: 15px;
+    z-index: 2;
+}
+
+.heading{
+    position: relative;
+    top: 20px;
+    left: 40px;
+    font-size: 2.2rem;
+}
+
+.heading>.mini{
+    color: var(--text_green);
+}
+
+.content1{
+    width: 570px;
+    margin-top: 45px ;
+    margin-left: 40px;
+    color: var(--text-grey);
+    font-size: 14px;
+    word-spacing: 2px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-top: -10px;
+    margin-left: 100px;
+}
+
+.form > .areadiv{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 30px;
+    height: 50px;
+    width: 500px;
+    align-items: center;
+}
+
+.form > .bhkdiv{
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 180px;
+    height: 50px;
+    width: 500px;
+    align-items: center;
+}
+
+.form > .bathdiv{
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 178px;
+    height: 50px;
+    width: 500px;
+    align-items: center;
+}
+
+.form > .locationdiv{
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 135px;
+    height: 50px;
+    width: 500px;
+    align-items: center;
+}
+
+.areatag{
+   color: #75EF77 ; 
+   outline-style: none;
+   height: 18px;
+   font-size: 18px;
+   text-align: center;
+   padding: 10px;
+   width: 200px;
+   box-shadow: none;
+   background-color: #4e4e4f;
+   border: none;
+   border-radius: 10px;
+}
+
+.selc_location{
+    border : none;
+    appearance: none;
+    width : 200px;
+    color: #75EF77;
+    background-color: #4e4e4f; 
+    font-size: 18px;
+    padding: 10px;
+    height: 40  px;
+    border-radius: 10px;  
+    outline-style: none; 
+}
+
+.submit_btn{
+    margin-top: 40px;
+    margin-left : 60px;
+    padding: 10px;
+    width: 250px;
+    font-size: 20px;
+    border-radius: 5px;
+    border-style: none;
+    color: var(--background_blue);
+    font-weight: 500;
+    background-color: rgb(40, 192, 40);
+}
+
+.submit_btn:hover{
+    background-color: rgb(60, 225, 60);
+    transform: scale(1.05) ;
+    transition: 0.5s;
+}
+
+/* popup css */
+
+.popup{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.658);
+    z-index: 3;
+    display: none;                  /* to be made flex when clicked  */
+    justify-content: center;
+    align-items: center;
+}
+
+.popup > .popupcont{
+    width: 450px;
+    height: 250px;
+    background-color: #FF9800;
+    padding:20px;
+    border-radius: 20px;
+}
+
+.popup > .popupcont > .resultdiv{
+    background-color: #FF9800;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.resultdiv > .txt1{
+    font-size: 35px;
+    font-weight: 500;
+    height: 30px;
+    margin: 0;
+    color: #080D12;
+    background-color: transparent;
+}
+
+.resultdiv > .txt2{
+    font-size: 45px;
+    font-weight: 700;
+    margin: 20px;
+    height: 10px;
+    color: #080D12;
+    background-color: transparent;
+}
+
+.resultdiv > .okbtn{
+    margin-top: 50px;
+    padding: 5px 40px;
+    border : 4px solid black;
+    background-color: #FF9800;
+    font-family: "Camre" , sans-serif;
+    font-size: 30px;
+    color:black;
+    border-radius: 20px;
+}
+
+.resultdiv > .okbtn:hover{
+    color: #FF9800;
+    background-color: #080D12;
+    transform: translateY(-3px);
+    transition: 0.2s;
+}
+
+/* styling for radio button */
+
+input[type="radio"] {
+    display: none;
+}
+
+label{
+    padding: 5px 10px;
+    background-color: #4e4e4f;
+    color: var(--text_green);
+}
+
+#radio-bhk-1:checked ~ .label-1 , 
+#radio-bhk-2:checked ~ .label-2 , 
+#radio-bhk-3:checked ~ .label-3 , 
+#radio-bhk-4:checked ~ .label-4 , 
+#radio-bhk-5:checked ~ .label-5 ,
+
+#radio-bath-1:checked ~ .label-bath-1 ,
+#radio-bath-2:checked ~ .label-bath-2 ,
+#radio-bath-3:checked ~ .label-bath-3 ,
+#radio-bath-4:checked ~ .label-bath-4 ,
+#radio-bath-5:checked ~ .label-bath-5 
+{
+
+    background-color: #75EF77;
+    color: #4e4e4f;
+    font-size: 20px;
+}
